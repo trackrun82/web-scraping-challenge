@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <!-- Mars Data -->
+    <div class="row" id="mars-listings">
+      <div class="col-md-12">
+        <h1 style="color:rgb(0, 89, 205);"><b>Latest Mars News</b></h1>
+        <h4 class="heading"><strong>{{mars.title}}</h4></strong>
+        <p>{{mars.p}}</p>
+      </div>
+    </div>
+   
+    <div class="row row-cols-2" id="mars-listings">
+      <div class="col-md-8">
+        <div class="card border-info mb-3">
+          <div style="background-color: black;" class="card-body">
+            <h2 style="color:rgb(0, 89, 205);" class="text-center"><b>Featured Mars Image</b></h2>
+          </div>
+          <img max-width="100%" max-height="100%" src= "{{mars.featured_image_url}}" alt="Featured Mars Image">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class = "card bg-info mb-3">
+          <div class = "card-header">
+            <h5><b>Current Weather on Mars</b></h5>
+          </div>
+          <div class="card-body">
+            <p>{{mars.mars_weather}}</p>
+          </div>
+        </div>
+        <div class = "card bg-info mb-3">
+          <div class = "card-header">
+            <h5><b>Mars Facts</b></h5>
+          </div>
+          <div class="card-body">
+            {{mars.mars_facts_table | safe}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 ml-md-auto text-center">
+      <h2 style="color:rgb(0, 89, 205);" class="text-center"><b>Mars Hemispheres</b></h2>
+      <hr>
+    </div>
+    <div class="row row-cols-4 row-cols-md-2">
+      <div class="col-md-1"></div>
+      <div class="col-md-5">
+        <div class="card border-info mb-3">
+          <div class="card">
+            <img src="{{mars.hemisphere_image_urls[0].img_url}}" class="card-img-top" alt="{{mars.hemisphere_image_urls[0].title}}">
+            <div style="background-color: black;" class="card-body text-center">
+              <h5 style="color:rgb(0, 89, 205);" class="card-title"><b>{{mars.hemisphere_image_urls[0].title}}</b></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="card border-info mb-3">
+          <div class="card">
+            <img src="{{mars.hemisphere_image_urls[1].img_url}}" class="card-img-top" alt="{{mars.hemisphere_image_urls[1].title}}">
+            <div style="background-color: black;" class="card-body text-center">
+              <h5 style="color:rgb(0, 89, 205);" class="card-title"><b>{{mars.hemisphere_image_urls[1].title}}</b></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-5">
+        <div class="card border-info mb-3">
+          <div class="card">
+            <img src="{{mars.hemisphere_image_urls[2].img_url}}" class="card-img-top" alt="{{mars.hemisphere_image_urls[2].title}}">
+            <div style="background-color: black;" class="card-body text-center">
+              <h5 style="color:rgb(0, 89, 205);" class="card-title"><b>{{mars.hemisphere_image_urls[2].title}}</b></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="card border-info mb-3">
+          <div class="card">
+            <img src="{{mars.hemisphere_image_urls[3].img_url}}" class="card-img-top" alt="{{mars.hemisphere_image_urls[3].title}}">
+            <div style="background-color: black;" class="card-body text-center">
+              <h5 style="color:rgb(0, 89, 205);" class="card-title"><b>{{mars.hemisphere_image_urls[3].title}}</b></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
